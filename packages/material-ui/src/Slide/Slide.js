@@ -36,19 +36,19 @@ function getTranslateValue(direction, node) {
   }
 
   if (direction === 'left') {
-    return `translateX(${window.innerWidth}px) translateX(${offsetX - rect.left}px)`;
+    return `translateX(${window.innerWidth}px) translateX(${offsetX - rect.left}px) translateZ(0)`;
   }
 
   if (direction === 'right') {
-    return `translateX(-${rect.left + rect.width - offsetX}px)`;
+    return `translateX(-${rect.left + rect.width - offsetX}px) translateZ(0)`;
   }
 
   if (direction === 'up') {
-    return `translateY(${window.innerHeight}px) translateY(${offsetY - rect.top}px)`;
+    return `translateY(${window.innerHeight}px) translateY(${offsetY - rect.top}px) translateZ(0)`;
   }
 
   // direction === 'down'
-  return `translateY(-${rect.top + rect.height - offsetY}px)`;
+  return `translateY(-${rect.top + rect.height - offsetY}px) translateZ(0)`;
 }
 
 export function setTranslateValue(direction, node) {
